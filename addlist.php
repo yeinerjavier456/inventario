@@ -117,5 +117,4 @@ $query =get_products();
     </div>
    
 </body>
-
 </html>
