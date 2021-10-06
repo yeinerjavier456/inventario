@@ -1,0 +1,107 @@
+Funcionalidad del Software de Inventario 
+
+La aplicación es super sencilla y por su funcionalidad tan limitada podría ser de mucha utilidad para el usuario final.
+
+Simplemente es la conformación de un CRUD de registro y alta de usuarios, así como la opción de agregar, editar, listar y eliminar productos.
+
+Aspectos técnicos del Sistema Web de Inventario
+El sistema de código abierto está diseñado en PHP y MySQL, con paradigma mvc tiene HTML, CSS y Javascript super básico, apenas lo necesario.
+
+Puede correr en un servidor con PHP 7 sin problemas y por ende funciona con las versiones actuales de XAMPP
+
+Puesta a Punto en un Servidor Local
+Descarga he instalación de aplicaciones requeridas
+Para la puesta a punto del sistema de inventario en un servidor local es necesario descargar he instalar las siguientes aplicaciones
+
+XAMPP
+GIT
+Visual Studio Code
+Descarga del Repositorio de GitHub
+Debes descargar el siguiente proyecto de GitHub donde está colgado el proyecto
+
+
+https://github.com/yeinerjavier456/inventario
+
+En tu ordenador debes acceder a la siguiente ubicación si realizaste la instalación de XAMPP con todos los parámetros por defecto.
+
+C:\xampp\htdocs
+Allí puedes descargar desde el terminal con Visual Studio Code el proyecto con el siguiente código
+
+git clone https://github.com/yeinerjavier456/inventario
+Activación de los servicios de XAMPP
+En este punto solo accedes a XAMPP y activas los servicios de Apache y MySQL, sino se te presenta ningún inconveniente en el proceso la siguiente URL estará operativa en tu ordenador en adelante y solo restará la creación de la base de datos.
+
+http://localhost/inventario/
+Creación de la base de datos
+Para realizar el proceso acceder a la siguiente dirección.
+
+http://localhost/phpmyadmin/
+Creas la base de datos project y en el apartado SQL insertas el código a continuación:
+
+Código SQL de la base de datos project
+
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : Searchbike
+ Source Server Type    : MySQL
+ Source Server Version : 100420
+ Source Host           : localhost:3306
+ Source Schema         : project
+
+ Target Server Type    : MySQL
+ Target Server Version : 100420
+ File Encoding         : 65001
+
+ Date: 06/10/2021 12:19:54
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for product
+-- ----------------------------
+DROP TABLE IF EXISTS `product`;
+CREATE TABLE `product`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_producto` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `stock` int(100) NOT NULL,
+  `time_create` date NOT NULL DEFAULT 'current_timestamp()',
+  `referencia` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `precio` int(255) NULL DEFAULT NULL,
+  `peso` int(255) NULL DEFAULT NULL,
+  `categoria` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `fecha_venta` datetime(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 121 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of product
+-- ----------------------------
+INSERT INTO `product` VALUES (119, 'medias', 456456, '2021-10-06', 's34', 453245, 4564, 'ropa', NULL);
+INSERT INTO `product` VALUES (120, 'camiza', 12, '2021-10-06', 's345', 1, 10, 'ropa', NULL);
+
+-- ----------------------------
+-- Table structure for user
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `password` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+INSERT INTO `user` VALUES (23, 'root', '25f9e794323b453885f5181f1b624d0b', 'root');
+
+SET FOREIGN_KEY_CHECKS = 1;
+
+
+
+
+Para este punto podrás acceder a la aplicación en tu ordenador con el usuario root y la contraseña 123456789
