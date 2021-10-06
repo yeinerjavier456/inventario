@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #fd7e1b;
+    background-color: #2f2a25;
 }
 .header {
     position: fixed;
@@ -84,7 +84,7 @@ tr:nth-child(even) {
     transition: 0.5s;
 }
 .modify .bfix:hover {
-    background-color: #fdb515;
+    background-color: #7c7669;
     color: white;
 }
 .delete .bdelete {
